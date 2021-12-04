@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import scrapy
+from bs4 import BeautifulSoup
 from ..items import FuturesCompanyItem
 
 
@@ -10,6 +11,12 @@ class FuturescompaniesSpider(scrapy.Spider):
 
     def parse(self, response):
         html = response.text
+        soup = BeautifulSoup(html, "html5lib")
+        div_mod_tables = soup.findAll('div', class_='mod-tables')
+        tables = div_mod_tables[0].find('table')
+        companyCodes = tables.findAll('tr')
 
-        print(html)
+        if div_mod_tables is not None:
+            return
+
         pass
