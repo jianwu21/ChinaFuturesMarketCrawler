@@ -8,10 +8,10 @@
 import scrapy
 
 
-class FuturescompaniesspiderItem(scrapy.Item):
+class FuturesCompanyItem(scrapy.Item):
     # define the fields for your item here like:
     name = scrapy.Field()
     code = scrapy.Field()
     rank2021 = scrapy.Field()
-    
+
     pass

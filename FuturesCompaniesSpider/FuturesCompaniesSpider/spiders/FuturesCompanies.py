@@ -1,12 +1,15 @@
 # -*- coding: utf-8 -*-
 import scrapy
-from ..items import FuturescompaniesspiderItem
+from ..items import FuturesCompanyItem
 
 
-class QhgsjbqkSpiderSpider(scrapy.Spider):
-    name = 'qhgsjbqk_spider'
+class FuturescompaniesSpider(scrapy.Spider):
+    name = 'FuturesCompanies'
     allowed_domains = ['www.cfachina.org/informationpublicity/futurescompanyinformantionpublicity/qhgsjbqk/']
     start_urls = ['http://www.cfachina.org/informationpublicity/futurescompanyinformantionpublicity/qhgsjbqk/']
 
     def parse(self, response):
+        html = response.text
+
+        print(html)
         pass
